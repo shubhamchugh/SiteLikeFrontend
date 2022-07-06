@@ -79,7 +79,9 @@
                                 @endif
                                 @endforeach
                             </ul>
-                            <a class="nav-link text-white">{{ Version::version() }}</a>
+                            <a class="nav-link text-white"> {{ Version::version() }} | Laravel v{{
+                                Illuminate\Foundation\Application::VERSION }} | (PHP v{{
+                                PHP_VERSION }})</a>
                         </div>
                     </div>
                 </nav>
