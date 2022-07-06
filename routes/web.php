@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\Frontend\HomePageController;
+use App\Http\Controllers\Frontend\PostPageController;
 use App\Http\Controllers\Frontend\ContentPageController;
 
 /*
