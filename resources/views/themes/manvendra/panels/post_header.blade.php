@@ -36,7 +36,7 @@
             @if ($post->post_type == 'listing')
             <div class="bog-hero">
                 <p>{{ $settings['title_above_content'] }}</p>
-                <h1>{{ !empty($post->title) ? $post->title : Str::upper($post->slug) }}</h1> <br>
+                <h1 class="text-uppercase">{{ !empty($post->title) ? $post->title : $post->slug }}</h1>
                 <span>{{ $settings['title_bellow_content'] ?? "" }}</span><br><br>
                 <span class="resolver">
                     <i class="fa fa-check blog-bgch" aria-hidden="true"></i> &nbsp;
@@ -47,7 +47,7 @@
 
             @if ($post->post_type == 'page')
             <div class="bog-hero">
-                <h1>{{ !empty($post->title) ? $post->title : Str::upper($post->slug) }} </h1>
+                <h1 class="text-uppercase">{{ !empty($post->title) ? $post->title : $post->slug }} </h1>
             </div>
             @endif
         </div>
