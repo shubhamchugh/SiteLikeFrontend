@@ -19,7 +19,7 @@ class HomePageController extends Controller
         )
             ->where('post_type', 'listing')
             ->where('status', 'publish')
-            ->orderBy('id', 'DESC')
+            ->orderBy('id', 'ASC')
             ->paginate(10);
 
         if (empty($posts->first())) {

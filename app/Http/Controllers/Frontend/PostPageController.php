@@ -45,9 +45,9 @@ class PostPageController extends Controller
             'page_views' => DB::raw('page_views + 1'),
         ]);
 
-        $settings = nova_get_settings();
-
-        $title = (!empty($post->title)) ? $post->title : ($settings['title_prefix'] . ' ' . ucwords($post->slug) . ' ' . $settings['title_suffix']);
+        $settings    = nova_get_settings();
+        $alter_count = $post->domain_alternative->count();
+        $title       = (!empty($post->title)) ? $post->title : ($alter_count . " " . $settings['title_prefix'] . ' ' . ucwords($post->slug) . ' ' . $settings['title_suffix']);
 
         SEOTools::setTitle($title);
         SEOTools::setDescription(optional($post->seo_analyzers_relation)->domain_description);
@@ -67,6 +67,7 @@ class PostPageController extends Controller
                 'recent_update' => $recent_update,
                 'top_visited'   => $top_visited,
                 'recent_added'  => $recent_added,
+                'alter_count'   => $alter_count,
             ]);
     }
 }

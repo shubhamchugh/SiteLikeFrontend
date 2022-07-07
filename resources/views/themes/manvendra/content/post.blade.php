@@ -161,7 +161,7 @@
             <div class="row">
                 <div class="col-12 col-md-10">
                     <div class="middle-sec mt-4 mb-4">
-                        <h2>Top Alternative to {{ ucfirst($post->slug) }} & Websites like {{ ucfirst($post->slug) }}
+                        <h2>Found {{ $alter_count }} Top Alternative to {{ ucfirst($post->slug) }}
                         </h2>
                     </div>
                 </div>
