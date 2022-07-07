@@ -27,5 +27,5 @@ Route::get('/page/{post:slug}', [ContentPageController::class, 'index'])->name('
 
 if (Schema::hasTable('nova_settings')) {
 
-    Route::get((!empty(nova_get_setting('permalink_prefix')) ? nova_get_setting('permalink_prefix') : "Similar") . '/{post:slug}', [PostPageController::class, 'index'])->name('post.show');
+    Route::get((!empty(nova_get_setting('permalink_prefix')) ? nova_get_setting('permalink_prefix') : "") . '/{post:slug}', [PostPageController::class, 'index'])->name('post.show');
 }
