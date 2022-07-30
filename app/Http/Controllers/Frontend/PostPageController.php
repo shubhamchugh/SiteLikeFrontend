@@ -52,7 +52,7 @@ class PostPageController extends Controller
         SEOTools::setTitle($title);
         SEOTools::setDescription(optional($post->seo_analyzers_relation)->domain_description);
         SEOTools::opengraph()->setUrl(URL::current());
-        SEOMeta::addMeta('article:published_time', $post->updated_at->toW3CString(), 'property');
+        SEOMeta::addMeta('article:published_time', optional($post->updated_at)->toW3CString(), 'property');
         SEOTools::setCanonical(URL::current());
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::jsonLd()->addImage("https://s3.us-west-1.wasabisys.com/" . config('filesystems.disks.wasabi.bucket') . "/scrape/thumbnail/" . $post->thumbnail);
