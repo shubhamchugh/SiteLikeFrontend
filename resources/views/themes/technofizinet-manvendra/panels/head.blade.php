@@ -16,6 +16,10 @@
     <link rel="icon"
         href="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://phpscripttr.com&size=32"
         type="image/png">
+
+    {{ nova_get_setting('head_code') }}
+
+
     <!-- MINIFIED -->
     {!! SEO::generate() !!}
 </head>
