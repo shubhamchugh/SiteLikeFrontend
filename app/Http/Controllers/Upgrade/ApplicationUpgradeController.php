@@ -43,6 +43,9 @@ class ApplicationUpgradeController extends Controller
         Artisan::call('view:clear');
         print_r(Artisan::output());
 
+        Artisan::call('route:clear');
+        print_r(Artisan::output());
+
         Artisan::call('config:cache');
         print_r(Artisan::output());
 
