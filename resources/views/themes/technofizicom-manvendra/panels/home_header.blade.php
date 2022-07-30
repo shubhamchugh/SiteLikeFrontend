@@ -29,7 +29,7 @@
                         </div>
 
 
-                        @include('themes.manvendra.panels.navbar')
+                        @include('themes.technofizicom-manvendra.panels.navbar')
                     </div>
                 </div>
             </nav>

@@ -1,4 +1,4 @@
-@extends('themes.manvendra.layouts.post')
+@extends('themes.technofizinet-manvendra.layouts.post')
 
 
 @if ($post->post_type == 'page')

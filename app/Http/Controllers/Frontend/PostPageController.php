@@ -58,8 +58,9 @@ class PostPageController extends Controller
         SEOTools::jsonLd()->addImage("https://s3.us-west-1.wasabisys.com/" . config('filesystems.disks.wasabi.bucket') . "/scrape/thumbnail/" . $post->thumbnail);
         SEOMeta::setKeywords(optional($post->seo_analyzers_relation)->longTailKeywords);
         //SEO END FOR POST PAGE
-
-        return view('themes.manvendra.content.post',
+        $theme_name = 'themes.'.Config('value.theme_name').'.content.post';
+        return view(
+            $theme_name,
             [
                 'post'          => $post,
                 'menus'         => $menus,
@@ -68,6 +69,7 @@ class PostPageController extends Controller
                 'top_visited'   => $top_visited,
                 'recent_added'  => $recent_added,
                 'alter_count'   => $alter_count,
-            ]);
+            ]
+        );
     }
 }

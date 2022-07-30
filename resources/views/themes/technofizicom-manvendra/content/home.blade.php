@@ -1,4 +1,4 @@
-@extends('themes.manvendra.layouts.home')
+@extends('themes.technofizicom-manvendra.layouts.home')
 
 
 @section('content')

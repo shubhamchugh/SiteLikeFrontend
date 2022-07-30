@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Post;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Config;
 use Artesaos\SEOTools\Facades\SEOTools;
 
 class HomePageController extends Controller
 {
     public function index()
     {
-
         $posts = Post::with(
             'seo_analyzers_relation',
             'ip_record_relation',
@@ -58,7 +58,10 @@ class HomePageController extends Controller
         SEOTools::setCanonical(URL::current());
         SEOTools::opengraph()->addProperty('type', 'article');
 
-        return view('themes.manvendra.content.home', [
+
+        $theme_name = 'themes.'.Config('value.theme_name').'.content.home';
+
+        return view($theme_name, [
             'posts'         => $posts,
             'menus'         => $menus,
             'recent_update' => $recent_update,

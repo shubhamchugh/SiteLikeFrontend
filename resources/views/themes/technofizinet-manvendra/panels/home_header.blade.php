@@ -1,11 +1,12 @@
 <header>
-    <div class="header">
+    <div class="header-home">
         <div class="container">
 
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
                 <div class="container">
                     <a class="navbar-brand" href="{{ route('home.index') }}">
                         <img class="img-fluid" src="{{ asset('themes/manvendra/assets/images/logo.png') }}">
+
                     </a>
                     <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -28,29 +29,13 @@
                         </div>
 
 
-                        @include('themes.manvendra.panels.navbar')
-
+                        @include('themes.technofizinet-manvendra.panels.navbar')
                     </div>
                 </div>
             </nav>
-            @if ($post->post_type == 'listing')
-            <div class="bog-hero">
-                <p>{{ $settings['title_above_content'] }}</p>
-                <h1 class="text-uppercase">{{ !empty($post->title) ? $post->title : $post->slug }}</h1>
-                <span>{{ $settings['title_bellow_content'] ?? "" }}</span><br><br>
-                <span class="resolver">
-                    <i class="fa fa-check blog-bgch" aria-hidden="true"></i> &nbsp;
-                    <a class="resolver" rel="nofollow" href="http://{{ $post->slug }}" target="_blank"> {{ $post->slug
-                        }}</a> </span>
-            </div>
-            @endif
-
-            @if ($post->post_type == 'page')
-            <div class="bog-hero">
-                <h1 class="text-uppercase">{{ !empty($post->title) ? $post->title : $post->slug }} </h1>
-            </div>
-            @endif
+            <h1>Search Similar <span>Sites</span></h1>
         </div>
+    </div>
     </div>
     </div>
 

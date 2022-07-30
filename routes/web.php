@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\Frontend\HomePageController;
 use App\Http\Controllers\Frontend\PostPageController;
 use App\Http\Controllers\Frontend\ContentPageController;
+use App\Http\Controllers\Upgrade\ApplicationUpgradeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,12 @@ use App\Http\Controllers\Frontend\ContentPageController;
 //     return view('welcome');
 // });
 
+Route::get('upgrade', ApplicationUpgradeController::class);
+
 Route::get('/', [HomePageController::class, 'index'])->name('home.index');
 
 Route::get('/page/{post:slug}', [ContentPageController::class, 'index'])->name('page.show');
 
 if (Schema::hasTable('nova_settings')) {
-
     Route::get((!empty(nova_get_setting('permalink_prefix')) ? nova_get_setting('permalink_prefix') : "") . '/{post:slug}', [PostPageController::class, 'index'])->name('post.show');
 }
