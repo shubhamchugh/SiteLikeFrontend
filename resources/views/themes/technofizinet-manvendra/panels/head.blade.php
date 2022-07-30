@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('themes/manvendra/assets/css/responsive.css') }}">
+    <link rel="icon"
+        href="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://phpscripttr.com&size=32"
+        type="image/png">
     <!-- MINIFIED -->
     {!! SEO::generate() !!}
 </head>

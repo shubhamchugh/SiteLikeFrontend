@@ -15,7 +15,7 @@
                     <div class="col-12 col-md-3">
                         <div class="cc">
                             @if (!empty($post->thumbnail))
-                            <img class="img-fluid mt-2"
+                            <img alt="{{ $post->thumbnail }}" class="img-fluid mt-2"
                                 src="https://s3.us-west-1.wasabisys.com/{{ config('filesystems.disks.wasabi.bucket') }}/scrape/thumbnail/{{ $post->thumbnail }}">
                             @endif
                         </div>
@@ -186,24 +186,24 @@
 
 
                             @if (!empty($alternative_data->thumbnail))
-                            <img class="img-fluid  mt-2"
+                            <img alt="{{ $alternative_data->thumbnail }}" class="img-fluid  mt-2"
                                 src="https://s3.us-west-1.wasabisys.com/{{ config('filesystems.disks.wasabi.bucket') }}/scrape/thumbnail/{{ $alternative_data->thumbnail }}">
 
                             @else
-                            <img class="img-fluid  mt-2"
+                            <img alt="noimage" class="img-fluid  mt-2"
                                 src="https://s3.us-west-1.wasabisys.com/{{ config('filesystems.disks.wasabi.bucket') }}/scrape/thumbnail/noimage.png">
                             @endif
                         </div>
                     </div>
 
                     <div class="col-12 col-md-5">
-                        <h2>
+                        <h3>
                             <img class="img-fluid  mt-2"
                                 src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://{{ $alternative_data->slug }}&size=32">
                             <a class="link-post" href="{{ route('post.show',['post'=>$alternative_data->slug]) }}">{{
                                 ucfirst( $alternative_data->slug) ?? "" }}</a>
-                        </h2>
-                        <h3>{{ $alternative_data->seo_analyzers_relation->domain_title ?? ""}}</h3>
+                        </h3>
+                        <p class="text-warning">{{ $alternative_data->seo_analyzers_relation->domain_title ?? ""}}</p>
                         <p>{{ $alternative_data->seo_analyzers_relation->domain_description ?? "" }}</p>
                     </div>
                     <div class="col-12 col-md-4">
