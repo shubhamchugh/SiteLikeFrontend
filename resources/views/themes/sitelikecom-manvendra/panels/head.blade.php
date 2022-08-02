@@ -13,6 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('themes/manvendra/assets/css/responsive.css') }}">
+
+    {!! nova_get_setting('head_code') !!}
+
+
     <!-- MINIFIED -->
     {!! SEO::generate() !!}
 </head>
