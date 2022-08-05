@@ -46,7 +46,7 @@ class PostPageController extends Controller
         ]);
 
         $settings    = nova_get_settings();
-        $alter_count = $post->domain_alternative->count();
+        $alter_count = ($post->domain_alternative->count() == 0) ? "" : $post->domain_alternative->count();
         $title       = (!empty($post->title)) ? $post->title : ($alter_count . " " . $settings['title_prefix'] . ' ' . ucwords($post->slug) . ' ' . $settings['title_suffix']);
 
         SEOTools::setTitle($title);
