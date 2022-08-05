@@ -14,6 +14,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('themes/manvendra/assets/css/responsive.css') }}">
 
+
+    <link rel="icon" href="{{ asset('themes/manvendra/assets/images/favicon.png') }}" type="image/png">
+
     {!! nova_get_setting('head_code') !!}
 
     <!-- MINIFIED -->
