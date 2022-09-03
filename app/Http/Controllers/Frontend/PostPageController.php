@@ -47,7 +47,13 @@ class PostPageController extends Controller
 
         $settings    = nova_get_settings();
         $alter_count = ($post->domain_alternative->count() == 0) ? "" : $post->domain_alternative->count();
-        $title       = (!empty($post->title)) ? $post->title : ($alter_count . " " . $settings['title_prefix'] . ' ' . ucwords($post->slug) . ' ' . $settings['title_suffix']);
+      
+        if (Config('value.theme_name') == 'portal-directory-manvendra') {
+            $title       = (!empty($post->title)) ? $post->title : ($settings['title_prefix'] . ' ' . ucwords($post->slug) . ' ' . $settings['title_suffix']);
+        }else{
+            $title       = (!empty($post->title)) ? $post->title : ($alter_count . " " . $settings['title_prefix'] . ' ' . ucwords($post->slug) . ' ' . $settings['title_suffix']);
+        }
+
 
         SEOTools::setTitle($title);
         SEOTools::setDescription(optional($post->seo_analyzers_relation)->domain_description);
