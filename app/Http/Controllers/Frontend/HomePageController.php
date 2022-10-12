@@ -20,7 +20,7 @@ class HomePageController extends Controller
             ->where('post_type', 'listing')
             ->where('status', 'publish')
             ->orderBy('id', 'ASC')
-            ->paginate(10);
+            ->simplePaginate(10);
 
         if (empty($posts->first())) {
             return "<h1>Please do some scrape to get data</h1>";

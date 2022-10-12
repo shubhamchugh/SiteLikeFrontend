@@ -60,7 +60,7 @@
             @endforeach
 
             <div class="container">
-                {{ $posts->links('pagination::bootstrap-4') }}
+                {{ $posts->links('pagination::simple-bootstrap-4') }}
             </div>
 
         </div>
